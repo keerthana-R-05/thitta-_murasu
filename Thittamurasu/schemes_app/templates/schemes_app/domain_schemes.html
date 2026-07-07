@@ -1,0 +1,38 @@
+{% extends 'schemes_app/base.html' %}
+
+{% block content %}
+<div class="max-w-5xl mx-auto pb-20">
+    <div class="mb-12">
+        <a href="{% url 'home' %}" class="text-blue-600 font-bold flex items-center mb-4 hover:underline">
+            ← Back to Dashboard
+        </a>
+        <h1 class="text-4xl font-black text-slate-900 uppercase tracking-tighter">{{ domain }} Program Catalog</h1>
+        <p class="text-slate-500 text-lg">Detailed eligibility criteria and benefits for the {{ domain }} sector.</p>
+    </div>
+
+    <div class="grid gap-8">
+        {% for s in schemes %}
+        <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-shadow border-l-8 {% if domain == 'Women Welfare' %}border-l-pink-500{% elif domain == 'Agriculture' %}border-l-green-500{% else %}border-l-blue-500{% endif %}">
+            <h3 class="text-2xl font-black text-slate-800 mb-4">{{ s.name }}</h3>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-50 p-5 rounded-2xl">
+                    <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-3">Eligibility Criteria</h4>
+                    <p class="text-slate-700 font-medium leading-relaxed">{{ s.eligibility }}</p>
+                </div>
+                <div class="bg-blue-50 p-5 rounded-2xl">
+                    <h4 class="text-xs font-black text-blue-400 uppercase tracking-widest mb-3">Scheme Benefit</h4>
+                    <p class="text-blue-900 font-bold leading-relaxed">{{ s.benefit }}</p>
+                </div>
+            </div>
+            
+            <div class="mt-8 flex justify-end">
+                <a href="{% url 'check_eligibility' %}" class="bg-slate-900 text-white px-6 py-2 rounded-xl text-sm font-bold hover:bg-blue-600 transition-colors">
+                    Check Personal Eligibility →
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

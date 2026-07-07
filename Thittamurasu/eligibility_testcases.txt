@@ -1,0 +1,64 @@
+Test Case 1: The Senior Citizen
+SFDB ID: TN-TFAA-0BGK
+
+Domain: Senior Citizen Welfare
+
+Annual Income: 20000
+
+Marital Status: Married (or Widow)
+
+Disability Status: No
+
+🎯 Expected AI Match: Indira Gandhi National Old Age Pension
+
+Test Case 2: The Vulnerable Widow
+SFDB ID: TN-URWR-CRB8
+
+Domain: Women Welfare
+
+Annual Income: 31000
+
+Marital Status: Widow
+
+Disability Status: No
+
+🎯 Expected AI Match: Destitute Widow Pension Scheme
+
+Test Case 3: The Student (Male)
+SFDB ID: TN-5086-W7BC
+
+Domain: Educational Welfare
+
+Annual Income: 35000
+
+Marital Status: Single
+
+Disability Status: No
+
+🎯 Expected AI Match: Tamil Pudhalvan Thittam
+
+Test Case 4: The Farmer
+SFDB ID: TN-VQ0Y-S677
+
+Domain: Agriculture Welfare
+
+Annual Income: 24000
+
+Marital Status: Married
+
+Disability Status: No
+
+🎯 Expected AI Match: Uzhavar Aluvalar Thodarbu Thittam
+
+Test Case 5: The Head of Household (Women)
+SFDB ID: TN-WQKU-BTIU
+
+Domain: Women Welfare (or All Domains)
+
+Annual Income: 15000
+
+Marital Status: Married
+
+Disability Status: No
+
+🎯 Expected AI Match: Kalaignar Magalir Urimai Thogai
