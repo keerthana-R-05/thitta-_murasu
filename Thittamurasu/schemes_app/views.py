@@ -82,9 +82,9 @@ def send_live_sms(request):
         try:
             data = json.loads(request.body)
             # Paste your Twilio credentials here
-            # TWILIO_ACCOUNT_SID = 
-            # TWILIO_AUTH_TOKEN = 'enter'
-            # TWILIO_PHONE_NUMBER = 'enter'
+            TWILIO_ACCOUNT_SID = os.environ.get("TWILIO_ACCOUNT_SID")
+            TWILIO_AUTH_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN")
+            TWILIO_PHONE_NUMBER = os.environ.get("TWILIO_PHONE_NUMBER")
             client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
             message = client.messages.create(body=data.get('message'), from_=TWILIO_PHONE_NUMBER, to=data.get('mobile'))
             return JsonResponse({"status": "success", "sid": message.sid})
